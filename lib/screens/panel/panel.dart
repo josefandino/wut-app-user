@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wut_app_user/config/app-colors.dart';
-import 'package:wut_app_user/widgets/panel/header_panel.dart';
+import 'package:wut_app_user/widgets/panel/panel_section.dart';
 
 class PanelScreen extends StatefulWidget {
   const PanelScreen({super.key});
@@ -19,7 +19,17 @@ class _PanelScreenState extends State<PanelScreen> {
         backgroundColor: appColorScheme.primary,
         foregroundColor: appColorScheme.surfaceContainerHighest,
       ),
-      body: SingleChildScrollView(child: Column(children: [HeaderPanel()])),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            HeaderPanel(),
+            BannerPanel(),
+            SchedulePanel(),
+            CoursesPanel(),
+            ServicesPanel(),
+          ],
+        ),
+      ),
     );
   }
 }
