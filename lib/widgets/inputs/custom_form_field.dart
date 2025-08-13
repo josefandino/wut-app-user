@@ -34,10 +34,19 @@ class CustomFormField extends StatelessWidget {
       validator: validator,
       obscureText: obscureText,
       decoration: InputDecoration(
+        // Border default
         enabledBorder: border,
-        focusedBorder: border.copyWith(
-          borderSide: BorderSide(color: colors.primary),
+
+        // Border error
+        errorBorder: border.copyWith(
+          borderSide: BorderSide(color: colors.error),
         ),
+        focusedErrorBorder: border.copyWith(
+          borderSide: BorderSide(color: colors.error),
+        ),
+        // Color text error
+        errorText: errorMessage,
+        errorStyle: TextStyle(color: colors.error),
 
         isDense: true,
         label: label != null
@@ -48,16 +57,15 @@ class CustomFormField extends StatelessWidget {
         prefixIcon: prefixIcon != null
             ? Icon(prefixIcon!, color: colors.primary)
             : null,
-        errorText: errorMessage,
-        errorStyle: TextStyle(color: colors.error),
-        errorMaxLines: 2,
-        errorBorder: border.copyWith(
-          borderSide: BorderSide(color: colors.error),
+        // errorMaxLines: 3,
+
+        // Border focus
+        focusedBorder: border.copyWith(
+          borderSide: BorderSide(color: colors.secondary),
         ),
-        focusedErrorBorder: border.copyWith(
-          borderSide: BorderSide(color: colors.error),
-        ),
-        focusColor: colors.primary,
+
+        // Focus color
+        focusColor: colors.secondary,
         contentPadding: const EdgeInsets.symmetric(
           vertical: 12,
           horizontal: 16,
