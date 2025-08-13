@@ -17,8 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-
-    // Espera 5s y redirige al login con go_router
+    // Cambiá la duración si querés otro delay
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _timer = Timer(const Duration(seconds: 1), () {
         if (!mounted) return;
@@ -29,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    _timer?.cancel(); // buena práctica
+    _timer?.cancel();
     super.dispose();
   }
 
@@ -42,49 +41,59 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: appColorScheme.primary,
         foregroundColor: appColorScheme.surfaceContainerHighest,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Image.asset('assets/webp/logo_wut.webp', width: 200),
-                ),
-              ],
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Image.asset('assets/webp/logo_wut.webp', height: 90),
+                  ),
+                ],
+              ),
             ),
-            _infoHome(),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '!Te damos',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: appColorScheme.primary,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'la bienvenida',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: appColorScheme.primary,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Tu futuro comienza aquí',
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: appColorScheme.secondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _infoHome() {
-    return Center(
-      child: Column(
-        children: [
-          Text(
-            '!Te damos',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: appColorScheme.primary,
-            ),
-          ),
-          Text(
-            'la bienvenida',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: appColorScheme.primary,
-            ),
-          ),
-          Text(
-            'Tu futuro comienza aquí',
-            style: TextStyle(fontSize: 24, color: appColorScheme.secondary),
-          ),
-        ],
       ),
     );
   }
