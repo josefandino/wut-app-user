@@ -134,7 +134,6 @@ class LoginForm extends StatelessWidget {
 
   FilledButton buttonLogin(BuildContext context) {
     final colors = appColorScheme;
-    final stateInitialForm = context.watch<LoginCubit>().state;
 
     final formStatus = context.select(
       (LoginCubit cubit) => cubit.state.formStatus,

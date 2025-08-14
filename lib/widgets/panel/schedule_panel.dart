@@ -35,8 +35,8 @@ class SchedulePanel extends StatelessWidget {
         'scheduleStart': '8:00 am',
         'scheduleEnd': '12:00 pm',
         'scheduleDay': 'Lunes',
-        'scheduleSubject': 'Matemáticas',
-        'scheduleTeacher': 'Profesor 1',
+        'scheduleSubject': 'Enfermería',
+        'scheduleTeacher': 'Dra. Rosalba Pereiro',
         'scheduleRoom': 'Aula 1',
         'linkSchedule': 'https://google.com',
         'userMeet': 'userMeet',
@@ -46,17 +46,50 @@ class SchedulePanel extends StatelessWidget {
         'scheduleStart': '2:00 pm',
         'scheduleEnd': '4:00 pm',
         'scheduleDay': 'Martes',
-        'scheduleSubject': 'Física',
-        'scheduleTeacher': 'Profesor 2',
+        'scheduleSubject': 'Comunicación',
+        'scheduleTeacher': 'Dr. Abelardo Romero',
         'scheduleRoom': 'Aula 2',
         'linkSchedule': 'https://google.com',
         'userMeet': 'userMeet2',
         'passwordMeet': 'passwordMeet2',
       },
+      {
+        'scheduleStart': '2:00 pm',
+        'scheduleEnd': '4:00 pm',
+        'scheduleDay': 'Miércoles',
+        'scheduleSubject': 'Concejería clínica',
+        'scheduleTeacher': 'Dra. María Elena',
+        'scheduleRoom': 'Aula 3',
+        'linkSchedule': 'https://google.com',
+        'userMeet': 'userMeet3',
+        'passwordMeet': 'passwordMeet3',
+      },
+      {
+        'scheduleStart': '2:00 pm',
+        'scheduleEnd': '4:00 pm',
+        'scheduleDay': 'Jueves',
+        'scheduleSubject': 'Psicología',
+        'scheduleTeacher': 'Dr. Juan Carlos',
+        'scheduleRoom': 'Aula 4',
+        'linkSchedule': 'https://google.com',
+        'userMeet': 'userMeet4',
+        'passwordMeet': 'passwordMeet4',
+      },
+      {
+        'scheduleStart': '2:00 pm',
+        'scheduleEnd': '4:00 pm',
+        'scheduleDay': 'Viernes',
+        'scheduleSubject': 'Filosofía bíblica',
+        'scheduleTeacher': 'Dr. Pedro Rodríguez',
+        'scheduleRoom': 'Aula 5',
+        'linkSchedule': 'https://google.com',
+        'userMeet': 'userMeet5',
+        'passwordMeet': 'passwordMeet5',
+      },
     ];
 
     return SizedBox(
-      height: 180, // altura fija para evitar errores
+      height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: schedule.length,
@@ -66,7 +99,7 @@ class SchedulePanel extends StatelessWidget {
             margin: const EdgeInsets.only(right: 12),
             child: Card(
               elevation: 3,
-              shadowColor: Colors.grey.withOpacity(0.4),
+              shadowColor: Colors.grey.withValues(alpha: 0.4),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -99,7 +132,7 @@ class SchedulePanel extends StatelessWidget {
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: colors.primary,
-                          foregroundColor: Colors.white,
+                          foregroundColor: colors.surfaceContainerHighest,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),

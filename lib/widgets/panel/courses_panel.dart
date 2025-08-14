@@ -32,33 +32,33 @@ class CoursesPanel extends StatelessWidget {
     final colors = appColorScheme;
     final courses = [
       {
-        'name': 'Curso de React Native',
-        'teacher': 'Profesor 1',
-        'duration': '3 meses',
+        'name': 'Enfermería',
+        'teacher': 'Dra. Rosalba Pereiro',
+        'ciclo': '1',
         'link': 'https://google.com',
       },
       {
-        'name': 'Curso de Angular',
-        'teacher': 'Profesor 2',
-        'duration': '2 meses',
+        'name': 'Comunicación',
+        'teacher': 'Dr. Abelardo Romero',
+        'ciclo': '1',
         'link': 'https://google.com',
       },
       {
-        'name': 'Curso de Flutter',
-        'teacher': 'Profesor 3',
-        'duration': '4 meses',
+        'name': 'Concejería clínica',
+        'teacher': 'Dra. María Elena',
+        'ciclo': '1',
         'link': 'https://google.com',
       },
       {
-        'name': 'Curso de NestJS',
-        'teacher': 'Profesor 4',
-        'duration': '5 meses',
+        'name': 'Psicología',
+        'teacher': 'Dr. Juan Carlos',
+        'ciclo': '1',
         'link': 'https://google.com',
       },
       {
-        'name': 'Curso de Python',
-        'teacher': 'Profesor 5',
-        'duration': '6 meses',
+        'name': 'Filosofía bíblica',
+        'teacher': 'Dr. Pedro Rodríguez',
+        'ciclo': '1',
         'link': 'https://google.com',
       },
     ];
@@ -74,7 +74,7 @@ class CoursesPanel extends StatelessWidget {
             margin: const EdgeInsets.only(right: 12),
             child: Card(
               elevation: 3,
-              shadowColor: Colors.grey.withOpacity(0.4),
+              shadowColor: Colors.grey.withValues(alpha: 0.4),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -95,7 +95,7 @@ class CoursesPanel extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Duración: ${courses[index]['duration']}',
+                      'Ciclo: ${courses[index]['ciclo']}',
                       style: TextStyle(fontSize: 13, color: colors.secondary),
                     ),
                     const Spacer(),
@@ -112,7 +112,7 @@ class CoursesPanel extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        child: const Text('Ir al curso'),
+                        child: const Text('Info del curso'),
                       ),
                     ),
                   ],

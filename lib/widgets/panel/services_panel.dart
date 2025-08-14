@@ -46,6 +46,8 @@ class ServicesPanel extends StatelessWidget {
         'route': '/calendar',
       },
       {'title': 'Mis calificaciones', 'icon': Icons.grade, 'route': '/grades'},
+      {'title': 'Mi perfil', 'icon': Icons.person, 'route': '/profile'},
+      {'title': 'Soporte', 'icon': Icons.headset, 'route': '/support'},
     ];
 
     return SizedBox(
