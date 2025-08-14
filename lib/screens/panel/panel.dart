@@ -19,15 +19,22 @@ class _PanelScreenState extends State<PanelScreen> {
         backgroundColor: appColorScheme.primary,
         foregroundColor: appColorScheme.surfaceContainerHighest,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HeaderPanel(),
-            BannerPanel(),
-            SchedulePanel(),
-            CoursesPanel(),
-            ServicesPanel(),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeaderPanel(),
+              const SizedBox(height: 12),
+              BannerPanel(),
+              const SizedBox(height: 12),
+              SchedulePanel(),
+              const SizedBox(height: 12),
+              CoursesPanel(),
+              const SizedBox(height: 12),
+              ServicesPanel(),
+              const SizedBox(height: 12),
+            ],
+          ),
         ),
       ),
     );
